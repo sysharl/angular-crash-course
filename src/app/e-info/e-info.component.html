@@ -1,0 +1,26 @@
+<h2>User List</h2>
+<form #userForm="ngForm" (ngSubmit)="addNewUser(userForm)">
+    <div class="form-group">
+        <input type="text" name="firstName" placeholder="First Name" ngModel/>
+        <input type="text" name="email" placeholder="Email" ngModel/>
+        <button type="submit" name="button" >Submit</button>
+    </div>
+</form>
+<table class="user-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of infoList" >
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="infoList.length ===0">No User Found</p>

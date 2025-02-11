@@ -5,22 +5,21 @@ import { CommonModule } from '@angular/common';
   selector: 'app-form',
   imports: [FormsModule, CommonModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrl: './form.component.css',
 })
 export class FormComponent {
-  showError =false;
-  user={
+  showError = false;
+  user = {
     email: '',
     firstName: '',
-    lastName: ''
-  }
- 
+    lastName: '',
+  };
 
-  submit(loginForm: NgForm){
-    if(!loginForm.value.firstName){
-      this.showError=true;
-    }else{
-      this.showError=false;
+  submit(loginForm: NgForm) {
+    if (!loginForm.value.firstName) {
+      this.showError = true;
+    } else {
+      this.showError = false;
     }
     console.log(loginForm.value);
   }
